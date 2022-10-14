@@ -23,6 +23,16 @@ class User extends Authenticatable
         'password',
     ];
 
+    public function reservations()
+    {
+        return $this->hasMany('App\Models\Reservation');
+    }
+    
+    public function favorites()
+    {
+        return $this->hasMany('App\Models\Favorite');
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *
